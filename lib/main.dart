@@ -7,7 +7,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:nano_health_suite_app/app/ui/pages/home_page/home_page.dart';
 import 'package:nano_health_suite_app/app/ui/pages/login_page/login_page.dart';
 import 'core/init/theme/app_theme_light.dart';
 
