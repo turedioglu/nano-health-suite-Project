@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
         supportedLocales: const [
           Locale('tr'),
         ],
-        home: const HomePage(),
+        home: const LoginPage(),
       ),
     );
   }
