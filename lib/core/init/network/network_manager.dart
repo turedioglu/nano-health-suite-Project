@@ -60,8 +60,6 @@ class NetworkManager {
     }
   }
 
-  webNetwork() {}
-
   Future post<T extends IBaseModel>({
     required String path,
     required T model,
@@ -98,9 +96,9 @@ dynamic _jsonBodyParser<T>(IBaseModel model, String body, response) async {
     if (jsonBody is List) {
       List<T> responseList = [];
       List<dynamic> list = jsonDecode(response.data);
-      for (var oneAlbum in list) {
-          T album = model.fromJson(oneAlbum);
-          responseList.add(album);
+      for (var productDetail in list) {
+          T product = model.fromJson(productDetail);
+          responseList.add(product);
         }
       return responseList;
     } else if (jsonBody is Map) {

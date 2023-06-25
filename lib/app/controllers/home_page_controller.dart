@@ -13,7 +13,7 @@ class HomePageController extends GetxController {
   }
 
   getAllProducts() async {
-    albums = await Services().getAllProducts();
+    productDetailList = await Services().getAllProducts();
     update();
   }
 
@@ -24,5 +24,5 @@ class HomePageController extends GetxController {
     update();
   }
 
-  List<ProductListModel>? albums = [];
+  List<ProductListModel>? productDetailList = [];
 }

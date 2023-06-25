@@ -38,13 +38,13 @@ class HomePage extends GetView<HomePageController> {
         builder: (c) {
           return ListView.builder(
             shrinkWrap: true,
-            itemCount: c.albums?.length ?? 0,
+            itemCount: c.productDetailList?.length ?? 0,
             itemBuilder: (context, index) {
               return Padding(
                 padding: EdgeInsets.all(Utility.dynamicWidthPixel(26)),
                 child: InkWell(
                   onTap: () async {
-                    await c.getProductDetail(c.albums?[index].id);
+                    await c.getProductDetail(c.productDetailList?[index].id);
                     if (c.productDetailModel.id != null) {
                       Get.to(() => const ProductDetailPage());
                     }
@@ -60,7 +60,7 @@ class HomePage extends GetView<HomePageController> {
                             border: Border.all(color: ColorManager.instance.thirdDark),
                             image: DecorationImage(
                               image: CachedNetworkImageProvider(
-                                c.albums?[index].image ?? "",
+                                c.productDetailList?[index].image ?? "",
                               ),
                             ),
                             borderRadius: const BorderRadius.only(
@@ -78,7 +78,7 @@ class HomePage extends GetView<HomePageController> {
                                   iconSize: Utility.dynamicWidthPixel(18),
                                   color: ColorManager.instance.yellow,
                                   allowHalf: true,
-                                  initialValue: c.albums?[index].rating?.rate?.toDouble() ?? 0.0,
+                                  initialValue: c.productDetailList?[index].rating?.rate?.toDouble() ?? 0.0,
                                   readOnly: false,
                                 ),
                               ],
@@ -93,7 +93,7 @@ class HomePage extends GetView<HomePageController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                c.albums?[index].title ?? "",
+                                c.productDetailList?[index].title ?? "",
                                 style: TextStyle(
                                   fontStyle: FontStyle.italic,
                                   color: ColorManager.instance.thirdDark,
@@ -103,7 +103,7 @@ class HomePage extends GetView<HomePageController> {
                               Padding(
                                 padding: EdgeInsets.only(top: Utility.dynamicWidthPixel(16)),
                                 child: Text(
-                                  c.albums?[index].description ?? "",
+                                  c.productDetailList?[index].description ?? "",
                                   style: TextStyle(color: ColorManager.instance.thirdDark, fontWeight: FontWeight.w400, fontSize: Utility.dynamicTextSize(15)),
                                 ),
                               ),
